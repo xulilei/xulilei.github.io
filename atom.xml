@@ -5,9 +5,9 @@
   <subtitle>AAAAAAA</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://xulilei.github.io/"/>
+  <link href="https://xulilei.github.io/blog/"/>
   <updated>2020-05-31T07:42:45.757Z</updated>
-  <id>https://xulilei.github.io/</id>
+  <id>https://xulilei.github.io/blog/</id>
   
   <author>
     <name>LiLei Xu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://xulilei.github.io/2020/05/31/hello-world/"/>
-    <id>https://xulilei.github.io/2020/05/31/hello-world/</id>
+    <link href="https://xulilei.github.io/blog/2020/05/31/hello-world/"/>
+    <id>https://xulilei.github.io/blog/2020/05/31/hello-world/</id>
     <published>2020-05-31T06:50:19.969Z</published>
     <updated>2020-05-31T07:42:45.757Z</updated>
     
@@ -33,7 +33,7 @@
     
     
     
-      <category term="mysql" scheme="https://xulilei.github.io/tags/mysql/"/>
+      <category term="mysql" scheme="https://xulilei.github.io/blog/tags/mysql/"/>
     
   </entry>
   
