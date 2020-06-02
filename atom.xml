@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xulilei.github.io/"/>
-  <updated>2020-06-02T11:38:47.921Z</updated>
+  <updated>2020-06-02T11:44:43.355Z</updated>
   <id>https://xulilei.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xulilei.github.io/2020/06/02/%E5%8D%81%E6%AC%A1%E6%96%B9%E7%A4%BE%E4%BA%A4%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE/"/>
     <id>https://xulilei.github.io/2020/06/02/%E5%8D%81%E6%AC%A1%E6%96%B9%E7%A4%BE%E4%BA%A4%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE/</id>
     <published>2020-06-02T11:02:13.000Z</published>
-    <updated>2020-06-02T11:38:47.921Z</updated>
+    <updated>2020-06-02T11:44:43.355Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><p>SpringBoot+SpringCloud+SpringMVC+SpringData，也称这种架构模式为spring全家桶</p><h3 id="系统模块"><a href="#系统模块" class="headerlink" title="系统模块"></a>系统模块</h3><p>不再采取按dao，service层划分模块，而是基于每个微服务，再将每个模块封装成一个镜像，再通过springCloud连接起来。因此在每个微服务中便不需要再写接口，因为每个微服务就是最小模块 <img src="https://gitee.com/xulilei/pic/raw/master/image-20200602161001068.png" alt=""></p><h3 id="开发API"><a href="#开发API" class="headerlink" title="开发API"></a>开发API</h3><p>通过swagger封装，Nginx代理，形成的API开发文档</p><p><img src="https://gitee.com/xulilei/pic/raw/master/image-20200602154755423.png" alt=""></p><h3 id="Restful开发风格"><a href="#Restful开发风格" class="headerlink" title="Restful开发风格"></a>Restful开发风格</h3><p>我们在项目中经常用到增删改查：get/post/put/delete四种方法，安全：操作不会出现脏读、幻读等操作。幂等：查询成功后不会对数据库造成影响</p><ul><li>Get查询是安全且幂等的</li><li>Post是不安全且不幂等的</li><li>Put改是不安全且幂等的</li><li>Delete删是不安全且幂等的</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
