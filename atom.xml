@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xulilei.github.io/"/>
-  <updated>2020-06-02T11:44:43.355Z</updated>
+  <updated>2020-06-05T08:03:32.845Z</updated>
   <id>https://xulilei.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>十次方社交平台项目</title>
+    <title>Docker入门篇</title>
+    <link href="https://xulilei.github.io/2020/06/05/Docker%E5%85%A5%E9%97%A8/"/>
+    <id>https://xulilei.github.io/2020/06/05/Docker%E5%85%A5%E9%97%A8/</id>
+    <published>2020-06-05T07:57:43.000Z</published>
+    <updated>2020-06-05T08:03:32.845Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker入门"><a href="#Docker入门" class="headerlink" title="Docker入门"></a>Docker入门</h1><h4 id="Dokcer为什么会出现？"><a href="#Dokcer为什么会出现？" class="headerlink" title="Dokcer为什么会出现？"></a>Dokcer为什么会出现？</h4><p>一款产品从开发到上线，一般都需要两套环境。而环境的配置十分麻烦，Docker给出了解决方案</p><h4 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h4><p>java–jar（环境）–打包项目带上环境（即Docker镜像）–Docker仓库–下载我们发布的镜像–直接运行即可。</p><h4 id="虚拟机技术特点"><a href="#虚拟机技术特点" class="headerlink" title="虚拟机技术特点"></a>虚拟机技术特点</h4><p>1、资源占用十分多</p><p>2、冗余步骤多</p><p>3、启动很慢</p><p>如下图所示，多个APP共享一个lib环境，可能会造成端口冲突等环境冲突的问题</p><p><img src="https://gitee.com/xulilei/pic/raw/master/TIM%E5%9B%BE%E7%89%8720200603160240.png" alt=""></p><h4 id="容器化技术"><a href="#容器化技术" class="headerlink" title="容器化技术"></a>容器化技术</h4><p>如下图所示，每个模块拥有独属于自己运行的环境，各个模块之间相互隔离</p><p><img src="https://gitee.com/xulilei/pic/raw/master/20200603160535.png" alt=""></p><h4 id="Docker的相关概念"><a href="#Docker的相关概念" class="headerlink" title="Docker的相关概念"></a>Docker的相关概念</h4><h5 id="Docker架构图"><a href="#Docker架构图" class="headerlink" title="Docker架构图"></a>Docker架构图</h5><p><img src="https://gitee.com/xulilei/pic/raw/master/20200603161527.png" alt=""></p><h5 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h5><h6 id="镜像：images"><a href="#镜像：images" class="headerlink" title="镜像：images"></a>镜像：images</h6><p>​    通过这个模版来创建容器服务，比如Mysql镜像–通过Docker运行后，便成为了一个提供服务的容器,一个镜像可以创建多个容器</p><h5 id="容器：container"><a href="#容器：container" class="headerlink" title="容器：container"></a>容器：container</h5><p>​    提供服务，可以启动、停止、删除等，可类比为一个简单的linux系统</p><h5 id="仓库：repository"><a href="#仓库：repository" class="headerlink" title="仓库：repository"></a>仓库：repository</h5><p>​    存放镜像的地方，分为共有仓库和私有仓库</p><h4 id="Docker安装Nginx"><a href="#Docker安装Nginx" class="headerlink" title="Docker安装Nginx"></a>Docker安装Nginx</h4><p>1、search：可在命令行和dockerHub上搜索对应版本</p><p>2、pull：拉去下载该镜像</p><p>3、docker images：查看本机上的镜像</p><p>3、运行该镜像 </p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">docker run -d --name nginx01 -p 3344:80 nginx </span><br><span class="line"><span class="meta">#</span><span class="bash">新建一个名字为nginx01的nginx镜像，公网访问地址为3344，内部地址为80，并运行该镜像</span></span><br><span class="line"><span class="meta">#</span><span class="bash">-d 后台运行、--name 命名、-p 端口号</span></span><br></pre></td></tr></tbody></table></figure><p>4、内部测试</p><p>​    curl localhost:3344</p><h4 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h4><h5 id="结构示意图如下"><a href="#结构示意图如下" class="headerlink" title="结构示意图如下"></a>结构示意图如下</h5><p><img src="https://gitee.com/xulilei/pic/raw/master/20200605154253.png" alt=""></p><p>防止容器删除后数据丢失，通过实现容器间数据共享，并将产生的数据备份到linux的文件系统上</p><p>总结一句话就是：容器的持久化和容器间的同步操作。</p><h5 id="使用数据卷"><a href="#使用数据卷" class="headerlink" title="使用数据卷"></a>使用数据卷</h5><p>​    -v 主机目录:容器内目录  —&gt;映射容器内的目录到主机上</p><blockquote><p>参考自狂神说JAVA</p></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Docker入门&quot;&gt;&lt;a href=&quot;#Docker入门&quot; class=&quot;headerlink&quot; title=&quot;Docker入门&quot;&gt;&lt;/a&gt;Docker入门&lt;/h1&gt;&lt;h4 id=&quot;Dokcer为什么会出现？&quot;&gt;&lt;a href=&quot;#Dokcer为什么会出现？&quot; c
+      
+    
+    </summary>
+    
+    
+      <category term="Docker" scheme="https://xulilei.github.io/categories/Docker/"/>
+    
+      <category term="SpringCloud" scheme="https://xulilei.github.io/categories/Docker/SpringCloud/"/>
+    
+    
+      <category term="微服务" scheme="https://xulilei.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>十次方社交平台项目之day1</title>
     <link href="https://xulilei.github.io/2020/06/02/%E5%8D%81%E6%AC%A1%E6%96%B9%E7%A4%BE%E4%BA%A4%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE/"/>
     <id>https://xulilei.github.io/2020/06/02/%E5%8D%81%E6%AC%A1%E6%96%B9%E7%A4%BE%E4%BA%A4%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE/</id>
     <published>2020-06-02T11:02:13.000Z</published>
-    <updated>2020-06-02T11:44:43.355Z</updated>
+    <updated>2020-06-05T08:02:10.842Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><p>SpringBoot+SpringCloud+SpringMVC+SpringData，也称这种架构模式为spring全家桶</p><h3 id="系统模块"><a href="#系统模块" class="headerlink" title="系统模块"></a>系统模块</h3><p>不再采取按dao，service层划分模块，而是基于每个微服务，再将每个模块封装成一个镜像，再通过springCloud连接起来。因此在每个微服务中便不需要再写接口，因为每个微服务就是最小模块 <img src="https://gitee.com/xulilei/pic/raw/master/image-20200602161001068.png" alt=""></p><h3 id="开发API"><a href="#开发API" class="headerlink" title="开发API"></a>开发API</h3><p>通过swagger封装，Nginx代理，形成的API开发文档</p><p><img src="https://gitee.com/xulilei/pic/raw/master/image-20200602154755423.png" alt=""></p><h3 id="Restful开发风格"><a href="#Restful开发风格" class="headerlink" title="Restful开发风格"></a>Restful开发风格</h3><p>我们在项目中经常用到增删改查：get/post/put/delete四种方法，安全：操作不会出现脏读、幻读等操作。幂等：查询成功后不会对数据库造成影响</p><ul><li>Get查询是安全且幂等的</li><li>Post是不安全且不幂等的</li><li>Put改是不安全且幂等的</li><li>Delete删是不安全且幂等的</li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
@@ -37,8 +65,12 @@
     
       <category term="十次方项目" scheme="https://xulilei.github.io/categories/%E5%8D%81%E6%AC%A1%E6%96%B9%E9%A1%B9%E7%9B%AE/"/>
     
+      <category term="SpringCloud" scheme="https://xulilei.github.io/categories/%E5%8D%81%E6%AC%A1%E6%96%B9%E9%A1%B9%E7%9B%AE/SpringCloud/"/>
+    
     
       <category term="微服务" scheme="https://xulilei.github.io/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+      <category term="SpringCloud" scheme="https://xulilei.github.io/tags/SpringCloud/"/>
     
   </entry>
   
