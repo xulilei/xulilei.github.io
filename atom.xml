@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xulilei.github.io/"/>
-  <updated>2020-07-28T02:48:04.657Z</updated>
+  <updated>2020-07-28T04:45:09.431Z</updated>
   <id>https://xulilei.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>秋招复习之spring其他模块</title>
-    <link href="https://xulilei.github.io/2020/07/27/%E7%A7%8B%E6%8B%9B%E5%A4%8D%E4%B9%A0%E4%B9%8Bspring%E5%85%B6%E4%BB%96%E6%A8%A1%E5%9D%97/"/>
-    <id>https://xulilei.github.io/2020/07/27/%E7%A7%8B%E6%8B%9B%E5%A4%8D%E4%B9%A0%E4%B9%8Bspring%E5%85%B6%E4%BB%96%E6%A8%A1%E5%9D%97/</id>
-    <published>2020-07-27T10:51:53.000Z</published>
-    <updated>2020-07-28T02:48:04.657Z</updated>
-    
-    <content type="html"><![CDATA[<p>Spring</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Spring&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Spring设计模式、事务</title>
