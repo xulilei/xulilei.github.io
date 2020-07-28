@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xulilei.github.io/"/>
-  <updated>2020-07-27T11:06:58.062Z</updated>
+  <updated>2020-07-28T02:48:04.657Z</updated>
   <id>https://xulilei.github.io/</id>
   
   <author>
@@ -21,24 +21,47 @@
     <link href="https://xulilei.github.io/2020/07/27/%E7%A7%8B%E6%8B%9B%E5%A4%8D%E4%B9%A0%E4%B9%8Bspring%E5%85%B6%E4%BB%96%E6%A8%A1%E5%9D%97/"/>
     <id>https://xulilei.github.io/2020/07/27/%E7%A7%8B%E6%8B%9B%E5%A4%8D%E4%B9%A0%E4%B9%8Bspring%E5%85%B6%E4%BB%96%E6%A8%A1%E5%9D%97/</id>
     <published>2020-07-27T10:51:53.000Z</published>
-    <updated>2020-07-27T11:06:58.062Z</updated>
+    <updated>2020-07-28T02:48:04.657Z</updated>
     
-    <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<p>Spring</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-        
+        &lt;p&gt;Spring&lt;/p&gt;
+
       
     
     </summary>
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>Spring设计模式、事务</title>
+    <link href="https://xulilei.github.io/2020/07/27/%E7%A7%8B%E6%8B%9B%E5%A4%8D%E4%B9%A0%E4%B9%8Bspring%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E4%BA%8B%E5%8A%A1/"/>
+    <id>https://xulilei.github.io/2020/07/27/%E7%A7%8B%E6%8B%9B%E5%A4%8D%E4%B9%A0%E4%B9%8Bspring%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%81%E4%BA%8B%E5%8A%A1/</id>
+    <published>2020-07-27T10:51:53.000Z</published>
+    <updated>2020-07-28T04:45:09.431Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Spring设计模式、事务"><a href="#Spring设计模式、事务" class="headerlink" title="Spring设计模式、事务"></a>Spring设计模式、事务</h1><h2 id="Spring-设计模式"><a href="#Spring-设计模式" class="headerlink" title="Spring 设计模式"></a>Spring 设计模式</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>Spring使用工厂模式通过 BeanFactory、ApplicationContext创建 bean 对象</p><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>Spring 中 bean 的默认作用域就是 singleton(单例)的</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getSingleton</span><span class="params">(String beanName, ObjectFactory&lt;?&gt; singletonFactory)</span> </span>&#123;</span><br><span class="line">        Assert.notNull(beanName, <span class="string">"'beanName' must not be null"</span>);</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="keyword">this</span>.singletonObjects) &#123;</span><br><span class="line">            <span class="comment">// 检查缓存中是否存在实例  </span></span><br><span class="line">            Object singletonObject = <span class="keyword">this</span>.singletonObjects.get(beanName);</span><br><span class="line">            <span class="keyword">if</span> (singletonObject == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//...省略了很多代码</span></span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    singletonObject = singletonFactory.getObject();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//...省略了很多代码</span></span><br><span class="line">                <span class="comment">// 如果实例对象在不存在，我们注册到单例注册表中。</span></span><br><span class="line">                addSingleton(beanName, singletonObject);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> (singletonObject != NULL_OBJECT ? singletonObject : <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><p><strong>Spring AOP 就是基于动态代理的</strong>，如果要代理的对象，实现了某个接口，那么Spring AOP会使用<strong>JDK Proxy</strong>，而对于没有实现接口的对象会使用<strong>Cglib</strong> </p><p>具体在AnnotationAwareAspectJAutoProxyCreator的父类中定义了warpifnecessary方法，通过里面的creatProxy方法</p><h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><p>适配器模式(Adapter Pattern) 将一个接口转换成客户希望的另一个接口，适配器模式使接口不兼容的那些类可以一起工作，其别名为包装器(Wrapper)。</p><p>在Spring AOP 中，其实现是基于代理模式的。但是，在Spring AOP的增强或者通知（Advice）中，使用到了适配器模式。与之相关的适配器模式为AdvisorAdapter。</p><h3 id="模版方法模式"><a href="#模版方法模式" class="headerlink" title="模版方法模式"></a>模版方法模式</h3><p>模板方法模式是一种行为设计模式，它定义一个操作中的算法的骨架，而将一些步骤延迟到子类中</p><h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p>当一个对象发生改变的时候，这个对象所依赖的对象也会做出反应。</p><p>Spring 事件驱动模型就是观察者模式很经典的一个应用。</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义一个事件,继承自ApplicationEvent并且写相应的构造函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoEvent</span> <span class="keyword">extends</span> <span class="title">ApplicationEvent</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DemoEvent</span><span class="params">(Object source,String message)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(source);</span><br><span class="line">        <span class="keyword">this</span>.message = message;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMessage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> message;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个事件监听者,实现ApplicationListener接口，重写 onApplicationEvent() 方法；</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoListener</span> <span class="keyword">implements</span> <span class="title">ApplicationListener</span>&lt;<span class="title">DemoEvent</span>&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用onApplicationEvent接收消息</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onApplicationEvent</span><span class="params">(DemoEvent event)</span> </span>&#123;</span><br><span class="line">        String msg = event.getMessage();</span><br><span class="line">        System.out.println(<span class="string">"接收到的信息是："</span>+msg);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 发布事件，可以通过ApplicationEventPublisher  的 publishEvent() 方法发布消息。</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoPublisher</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    ApplicationContext applicationContext;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">publish</span><span class="params">(String message)</span></span>&#123;</span><br><span class="line">        <span class="comment">//发布事件</span></span><br><span class="line">        applicationContext.publishEvent(<span class="keyword">new</span> DemoEvent(<span class="keyword">this</span>, message));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="spring事务"><a href="#spring事务" class="headerlink" title="spring事务"></a>spring事务</h2><h3 id="spring隔离级别"><a href="#spring隔离级别" class="headerlink" title="spring隔离级别"></a>spring隔离级别</h3><p>比mysql多了一个<strong>ISOLATION_DEFAULT</strong> ：使用后端数据库默认的隔离级别，mysql使用的是REPEATABLE_READ </p><h3 id="spring事务-1"><a href="#spring事务-1" class="headerlink" title="spring事务"></a>spring事务</h3><h4 id="支持当前事务："><a href="#支持当前事务：" class="headerlink" title="支持当前事务："></a>支持当前事务：</h4><p><strong>PROPAGATION_REQUIRED</strong>：如果当前存在事务，则加入该事务，如果当前没有事务，则创建一个新的事务</p><p><strong>PROPAGATION_SUPPORTS</strong>：如果当前存在事务，则加入该事务，如果当前没有事务，则以非事务的方式继续执行</p><p><strong>PROPAGATION_MANDATORY</strong>：如果当前存在事务，则加入该事务，如果当前没有事务，则抛出异常</p><h4 id="不支持当前事务："><a href="#不支持当前事务：" class="headerlink" title="不支持当前事务："></a>不支持当前事务：</h4><p><strong>PROPAGATION_REQUIRES_NEW</strong>：创建一个新的事务，如果当前存在事务则把当前事务挂起</p><p><strong>PROPAGATION_NOT_SUPPORTED</strong>：以非事务方式运行，如果当前存在事务则把当前事务挂起</p><p><strong>PROPAGATION_NEVER</strong>：以非事务方式运行，如果当前存在事务，则抛出异常</p><h4 id="其他情况："><a href="#其他情况：" class="headerlink" title="其他情况："></a>其他情况：</h4><p><strong>PROPAGATION_NESTED</strong>： 如果当前存在事务，则创建一个事务作为当前事务的嵌套事务执行，否则就创建新的事务</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Spring设计模式、事务&quot;&gt;&lt;a href=&quot;#Spring设计模式、事务&quot; class=&quot;headerlink&quot; title=&quot;Spring设计模式、事务&quot;&gt;&lt;/a&gt;Spring设计模式、事务&lt;/h1&gt;&lt;h2 id=&quot;Spring-设计模式&quot;&gt;&lt;a href=
+      
+    
+    </summary>
+    
+    
+      <category term="秋招复习" scheme="https://xulilei.github.io/categories/%E7%A7%8B%E6%8B%9B%E5%A4%8D%E4%B9%A0/"/>
+    
+    
+      <category term="设计模式" scheme="https://xulilei.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
