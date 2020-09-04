@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xulilei.github.io/"/>
-  <updated>2020-08-25T08:02:27.087Z</updated>
+  <updated>2020-09-04T04:32:42.510Z</updated>
   <id>https://xulilei.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xulilei.github.io/2020/08/25/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E4%B9%8B%E9%80%92%E5%BD%92/"/>
     <id>https://xulilei.github.io/2020/08/25/%E7%AE%97%E6%B3%95%E6%80%9D%E7%BB%B4%E4%B9%8B%E9%80%92%E5%BD%92/</id>
     <published>2020-08-25T07:48:05.000Z</published>
-    <updated>2020-08-25T08:02:27.087Z</updated>
+    <updated>2020-09-04T04:32:42.510Z</updated>
     
     <content type="html"><![CDATA[<h2 id="算法思维"><a href="#算法思维" class="headerlink" title="算法思维"></a>算法思维</h2><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>写在开头：重要的事情说三遍：<strong><em>明白递归函数的作用并相信他能够完成这个任务，千万不要试图跳进细节</em></strong></p><h4 id="递归定义"><a href="#递归定义" class="headerlink" title="递归定义"></a>递归定义</h4><p>递归的基本思想是某个函数直接或间接地调用自身，这样就把原问题转换为许多性质相同但是规模更小的子问题，而不需要去关心这个子问题是如何被解决的。</p><h4 id="递归和枚举"><a href="#递归和枚举" class="headerlink" title="递归和枚举"></a>递归和枚举</h4><p>递归和枚举的区别在于：枚举是横向的把问题划分，然后依次求解子问题，而递归是把问题逐级分解，是纵向的拆分</p><h4 id="递归特征"><a href="#递归特征" class="headerlink" title="递归特征"></a>递归特征</h4><p>1、结束条件，定义了最简子问题的答案</p><p>2、自我调用，是不断的解决子问题</p><h4 id="为什么要写递归"><a href="#为什么要写递归" class="headerlink" title="为什么要写递归"></a>为什么要写递归</h4><p>1、递推是正常的思维，着眼于眼前的问题，思考将来问题而递归的思维是，要倒着思考，看到问题的尽头，把解决问题的过程看做过去时</p><p>2、分析问题的结构，如果一个问题可以被分解成相同结构的小问题时，可以快速解决问题</p><h4 id="写递归的技巧"><a href="#写递归的技巧" class="headerlink" title="写递归的技巧"></a>写递归的技巧</h4><p>重要的事情说三遍：<strong><em>明白递归函数的作用并相信他能够完成这个任务，千万不要试图跳进细节</em></strong></p><p>千万不要跳进这个函数探求更多细节，否则就会陷入无穷的细节无法自拔，人脑能压几个栈啊</p>]]></content>
     
@@ -30,58 +30,6 @@
       
       
         &lt;h2 id=&quot;算法思维&quot;&gt;&lt;a href=&quot;#算法思维&quot; class=&quot;headerlink&quot; title=&quot;算法思维&quot;&gt;&lt;/a&gt;算法思维&lt;/h2&gt;&lt;h3 id=&quot;递归&quot;&gt;&lt;a href=&quot;#递归&quot; class=&quot;headerlink&quot; title=&quot;递归&quot;&gt;&lt;/a&gt;递归&lt;/h
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>算法之全排列做题思路</title>
-    <link href="https://xulilei.github.io/2020/08/24/%E7%AE%97%E6%B3%95%E4%B9%8B%E5%85%A8%E6%8E%92%E5%88%97%E5%81%9A%E9%A2%98%E6%80%9D%E8%B7%AF/"/>
-    <id>https://xulilei.github.io/2020/08/24/%E7%AE%97%E6%B3%95%E4%B9%8B%E5%85%A8%E6%8E%92%E5%88%97%E5%81%9A%E9%A2%98%E6%80%9D%E8%B7%AF/</id>
-    <published>2020-08-24T08:22:30.000Z</published>
-    <updated>2020-08-24T08:22:30.984Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>算法之DFS/BFS做题思路</title>
-    <link href="https://xulilei.github.io/2020/08/24/%E7%AE%97%E6%B3%95%E4%B9%8BDFS-BFS%E5%81%9A%E9%A2%98%E6%80%9D%E8%B7%AF/"/>
-    <id>https://xulilei.github.io/2020/08/24/%E7%AE%97%E6%B3%95%E4%B9%8BDFS-BFS%E5%81%9A%E9%A2%98%E6%80%9D%E8%B7%AF/</id>
-    <published>2020-08-24T08:21:49.000Z</published>
-    <updated>2020-08-24T08:21:49.969Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>算法之DP做题思路</title>
-    <link href="https://xulilei.github.io/2020/08/24/%E7%AE%97%E6%B3%95%E4%B9%8BDP%E5%81%9A%E9%A2%98%E6%80%9D%E8%B7%AF/"/>
-    <id>https://xulilei.github.io/2020/08/24/%E7%AE%97%E6%B3%95%E4%B9%8BDP%E5%81%9A%E9%A2%98%E6%80%9D%E8%B7%AF/</id>
-    <published>2020-08-24T08:21:31.000Z</published>
-    <updated>2020-08-27T07:43:47.028Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="算法之DP做题思路"><a href="#算法之DP做题思路" class="headerlink" title="算法之DP做题思路"></a>算法之DP做题思路</h2><h4 id="要知道的"><a href="#要知道的" class="headerlink" title="要知道的"></a>要知道的</h4><p>首先，动态规划的问题一般都是求极值，既然是要求最值，核心问题是什么呢？</p><p><strong>求解动态规划的核心问题是穷举</strong>。因为要求最值，肯定要把所有可行的答案穷举出来，然后在其中找最值</p><p>首先，动态规划的穷举有点特别，因为这类问题<strong>存在「重叠子问题」</strong>，如果暴力穷举的话效率会极其低下，所以需要「备忘录」或者「DP table」来优化穷举过程，避免不必要的计算。</p><p>而且，动态规划问题一定会<strong>具备「最优子结构」</strong>，才能通过子问题的最值得到原问题的最值。</p><p>另外，虽然动态规划的核心思想就是穷举求最值，但是问题可以千变万化，穷举所有可行解其实并不是一件容易的事，只有列出<strong>正确的「状态转移方程」</strong>才能正确地穷举。</p><h4 id="写状态转移方程的步骤-穷举框架"><a href="#写状态转移方程的步骤-穷举框架" class="headerlink" title="写状态转移方程的步骤-穷举框架"></a>写状态转移方程的步骤-穷举框架</h4><p><strong>明确 base case -&gt; 明确「状态」-&gt; 明确「选择」 -&gt; 定义 dp 数组/函数的含义</strong>。</p><p>按上面的套路走，最后的结果就可以套这个框架：</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化 base case</span></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>][...] = base</span><br><span class="line"><span class="comment">//进行状态转移</span></span><br><span class="line"><span class="keyword">for</span> 状态<span class="number">1</span> in 状态<span class="number">1</span>的所有取值：</span><br><span class="line">    <span class="keyword">for</span> 状态<span class="number">2</span> in 状态<span class="number">2</span>的所有取值：</span><br><span class="line">        <span class="keyword">for</span> ...</span><br><span class="line">            dp[状态<span class="number">1</span>][状态<span class="number">2</span>][...] = 求最值(选择<span class="number">1</span>，选择<span class="number">2</span>...)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;算法之DP做题思路&quot;&gt;&lt;a href=&quot;#算法之DP做题思路&quot; class=&quot;headerlink&quot; title=&quot;算法之DP做题思路&quot;&gt;&lt;/a&gt;算法之DP做题思路&lt;/h2&gt;&lt;h4 id=&quot;要知道的&quot;&gt;&lt;a href=&quot;#要知道的&quot; class=&quot;headerli
       
     
     </summary>
