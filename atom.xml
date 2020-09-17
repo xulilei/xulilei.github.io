@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xulilei.github.io/"/>
-  <updated>2020-09-16T10:58:27.428Z</updated>
+  <updated>2020-09-17T02:11:13.226Z</updated>
   <id>https://xulilei.github.io/</id>
   
   <author>
@@ -21,19 +21,19 @@
     <link href="https://xulilei.github.io/2020/09/14/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/"/>
     <id>https://xulilei.github.io/2020/09/14/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</id>
     <published>2020-09-14T11:37:14.000Z</published>
-    <updated>2020-09-16T10:58:27.428Z</updated>
+    <updated>2020-09-17T02:11:13.226Z</updated>
     
-    <content type="html"><![CDATA[<p>9.14 中移物联网</p><p>面试没答好的点：</p><p>1、不懂得扩展，说到底还是自己基础不扎实，比如JVM，五个分区每个分区是干嘛用的</p><p>2、Feign的原理？如何在各服务之间通信的</p><p>3、hashmap介绍一下，直说了数据结构，应该从存储key开始</p><p>4、索引的种类，我只从主键索引，唯一索引，普通索引和联合索引说了</p><p>5、怎么判断哪些查询没有走索引，我说了最左前缀原则，应该再说一下explain语句</p><p>6、锁的分类，应该详细介绍，我答得语无伦次</p><p>总结：最大的问题是心里太慌了，应该从每个点然后再深入再退出再深入 </p>]]></content>
+    <content type="html"><![CDATA[<p>9.14 中移物联网</p><p>总结：最大的问题是第一次面试心里太慌了，应该从每个点然后再深入再退出再深入 </p><p>面试没答好的点：</p><p>1、不懂得扩展，比如JVM，五个分区每个分区是干嘛用的，能说多少就说多少，每个点先展开再进去</p><p>2、Feign的原理？</p><p>3、hashmap介绍一下，直说了数据结构，应该从存储结构，再到哈希冲突，再到数据结构，再到1.7 1.8区别</p><p>4、索引的种类，我只从主键索引，唯一索引，普通索引和联合索引说了，别忘了还有聚簇索引、稀疏索引</p><p>5、怎么判断哪些查询没有走索引，我说了最左前缀原则，应该再说一下explain语句</p><p>9.15中移物联网</p><p>总结：覆盖面够了，但是仍然不够细致</p><p>面试没有答好的点：</p><p>1、说说springboot的注解有哪些？应该详细介绍十几个，我只说了几个，不慌慢慢说就好</p><p>2、docker容器之间是如何通信的？ </p><p>3、docker基于linux什么原理？这个着实有点太难了</p><p>4、杜绝口误</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;9.14 中移物联网&lt;/p&gt;
+&lt;p&gt;总结：最大的问题是第一次面试心里太慌了，应该从每个点然后再深入再退出再深入 &lt;/p&gt;
 &lt;p&gt;面试没答好的点：&lt;/p&gt;
-&lt;p&gt;1、不懂得扩展，说到底还是自己基础不扎实，比如JVM，五个分区每个分区是干嘛用的&lt;/p&gt;
-&lt;p&gt;2、Feign的原理？如何在各服务之间通信的&lt;/p&gt;
-&lt;p&gt;3、hashmap介绍一下，直说了数据结构，应该从
+&lt;p&gt;1、不懂得扩展，比如JVM，五个分区每个分区是干嘛用的，能说多少就说多少，每个点先展开再进去&lt;/p&gt;
+&lt;p&gt;2、F
       
     
     </summary>
